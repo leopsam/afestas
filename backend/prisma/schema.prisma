@@ -1,0 +1,90 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int        @id @default(autoincrement())
+  email      String     @unique @db.VarChar(255)
+  password   String     @db.VarChar(255)
+  name       String     @db.VarChar(255)
+  cpf        String     @db.VarChar(11)
+  birthday   String     @db.VarChar(10)
+  phone      String     @db.VarChar(12)
+  street     String     @db.VarChar(100)
+  city       String     @db.VarChar(50)
+  complement String
+  state      String     @db.VarChar(2)
+  number     Int
+  cep        String     @db.VarChar(8)
+  status     String     @default("use") @db.VarChar(3)
+  avatar     String
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  Session    Session[]
+  Requests   Requests[]
+}
+
+model Session {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  User      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Theme {
+  id        Int        @id @default(autoincrement())
+  title     String     @db.VarChar(100)
+  category  String     @db.VarChar(100)
+  photo     String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  Requests  Requests[]
+}
+
+model ServiceType {
+  id          Int        @id @default(autoincrement())
+  title       String     @db.VarChar(100)
+  description String
+  photo       String
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  Requests    Requests[]
+}
+
+model Requests {
+  id            Int         @id @default(autoincrement())
+  userId        Int
+  User          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  description   String
+  themeId       Int
+  Theme         Theme       @relation(fields: [themeId], references: [id], onDelete: Cascade)
+  serviceTypeId Int
+  ServiceType   ServiceType @relation(fields: [serviceTypeId], references: [id], onDelete: Cascade)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+model Depositions {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(100)
+  depositions String
+  photo       String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Gallery {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(100)
+  description String
+  photo       String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
