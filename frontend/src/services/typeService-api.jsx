@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const getTypeService = async () => {
-    const url = "http://localhost:4000/service/all" 
+    const url = "http://54.211.125.162/api/service/all" 
 
     try {
         const res = await axios.get(url);

@@ -33,7 +33,7 @@ const postRequest = async (selectTheme, selectService, description, user) => {
         `
       );
 
-      const url = 'http://localhost:4000/request/'
+      const url = 'http://54.211.125.162/api/request/'
   
   try {
         const res = await axios.post(url, body, {

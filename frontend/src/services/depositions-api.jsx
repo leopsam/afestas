@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const getDeposition = async () => {
-    const url = "http://localhost:4000/deposition/all" 
+    const url = "http://54.211.125.162/api/deposition/all" 
 
     try {
         const res = await axios.get(url);

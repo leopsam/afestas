@@ -2,7 +2,7 @@ import axios from "axios";
 
 const signUpApi = async (email, password, name, cpf, birthday, phone, street, city, complement, state, number, cep, avatar) => {
   const body = { email, password, name, cpf, birthday, phone, street, city, complement, state, number, cep, avatar };
-  const url = "http://localhost:4000/user/signup";
+  const url = "http://54.211.125.162/api/user/signup";
   
   try {
         const res = await axios.post(url, body);
