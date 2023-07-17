@@ -37,7 +37,7 @@ jobs:
               run: docker compose down
 
             - name: Delete react docker volume
-              run: if docker volume ls --quiet --filter name=afestas_react-volume | grep -q.; then docker volume rm afestas_react-volume; fi
+              run: if docker volume ls --quiet --filter name=afestas_react-data | grep -q.; then docker volume rm afestas_react-data; fi
 
             - name: Run Docker Compose Up and Build
               run: docker compose up --build -d
