@@ -26,7 +26,7 @@ services:
     container_name: spa
     build: ./frontend
     volumes:
-      - react-data:/var/www/html
+      - react-volume:/var/www/html
 
   openssl:
     build: ./openssl
@@ -40,7 +40,7 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - react-data:/var/www/html
+      - react-volume:/var/www/html
       - ssl-certs:/certs
     depends_on:
     - postgres
@@ -50,5 +50,5 @@ services:
 
 volumes:
   postgres-data:
-  react-data:
+  react-volume:
   ssl-certs:

@@ -34,10 +34,10 @@ jobs:
                 fail_on_empty: true
 
             - name: Run Docker Compose Down
-              run: docker compose down -v
+              run: docker compose down
 
             - name: Delete react docker volume
-              run: if docker volume ls --quiet --filter name=afestas_react-data | grep -q.; then docker volume rm afestas_react-data; fi
+              run: if docker volume ls --quiet --filter name=afestas_react-volume | grep -q .; then docker volume rm afestas_react-volume; fi
 
             - name: Run Docker Compose Up and Build
               run: docker compose up --build -d
