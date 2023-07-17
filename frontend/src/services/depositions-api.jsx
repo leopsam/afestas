@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const getDeposition = async () => {
-    const url = import.meta.env.VITE_REACTAPP_BACKEND_URL + "deposition/all" 
+    const url = import.meta.env.VITE_REACTAPP_BACKEND_URL + "/api/deposition/all" 
 
     try {
         const res = await axios.get(url);
