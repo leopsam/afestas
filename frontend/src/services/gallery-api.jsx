@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const getGallery = async () => {
-    const url = " http://api:4000/api/galery/all" 
+    const url = "http://ec2-54-211-125-162.compute-1.amazonaws.com/api/galery/all" 
 
     try {
         const res = await axios.get(url);
