@@ -9,7 +9,7 @@ services:
     env_file:
       - backend/.env
     volumes:
-      - postgres-volume:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
 
   api:
     container_name: api
@@ -48,6 +48,6 @@ services:
     - openssl
 
 volumes:
-  postgres-volume:
+  postgres-data:
   react-volume:
   ssl-certs:
