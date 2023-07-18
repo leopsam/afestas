@@ -1,11 +1,10 @@
 import axios from 'axios';
 
-
 const getGallery = async () => {
-    const url = "http://ec2-54-211-125-162.compute-1.amazonaws.com/api/galery/all" 
+    const API_URL = import.meta.env.VITE_REACTAPP_BACKEND_URL;
 
     try {
-        const res = await axios.get(url);
+        const res = await axios.get(`${API_URL}galery/all`);
         return res.data;
     } catch (err) {
         throw new Error(err.response.data);

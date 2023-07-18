@@ -23,7 +23,7 @@ export default function SignIn() {
     const [city, setCity] = useState("");
     const [complement, setComplement] = useState("");
     const [state, setState] = useState("");
-    const [number, setNumber] = useState("");
+    const [number, setNumber] = useState(2);
     const [cep, setCep] = useState("");
 
     const avatar = "https://www.papeldeparede.etc.br/fotos/wp-content/uploads/jake_hora_de_aventura.jpg"
@@ -191,7 +191,7 @@ export default function SignIn() {
                         Número:
                         <Input
                             id="number"
-                            type="text"
+                            type="number"
                             value={number}
                             disabled={disabled} 
                             corFundo={disabled ? inputDisabled : inputActivated }   

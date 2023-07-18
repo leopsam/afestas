@@ -19,7 +19,7 @@ model User {
   city       String     @db.VarChar(50)
   complement String
   state      String     @db.VarChar(2)
-  number     Int
+  number     String
   cep        String     @db.VarChar(8)
   status     String     @default("use") @db.VarChar(3)
   avatar     String
