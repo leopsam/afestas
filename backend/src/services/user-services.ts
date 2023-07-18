@@ -17,8 +17,6 @@ export async function createUser(userData: User) {
   return createUser;
 }
 
-
-
 export default {
   getAllUser,
   createUser,

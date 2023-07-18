@@ -11,7 +11,7 @@ export type User = {
   city: string;
   complement: string;
   state: string;
-  number: number;
+  number: string;
   cep: string;
   avatar: string;
 }

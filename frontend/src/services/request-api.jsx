@@ -33,10 +33,10 @@ const postRequest = async (selectTheme, selectService, description, user) => {
         `
       );
 
-      const url = 'http://54.211.125.162/api/request/'
+      const API_URL = import.meta.env.VITE_REACTAPP_BACKEND_URL;
   
   try {
-        const res = await axios.post(url, body, {
+        const res = await axios.post(`${API_URL}request/`, body, {
             headers: {
                 Authorization: `Bearer ${token}`,
               },

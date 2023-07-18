@@ -12,8 +12,8 @@
     "dev:migration": "npx prisma migrate dev",
     "dev:seed": "npx prisma db seed",
 
-    "test": " dotenv -e .env.test npx jest --passWithNoTests --runInBand",
-    "test:migration": "npx dotenv -e .env.test npx prisma migrate dev --name afestas_testes -init",
+    "test": " npm run test:migration && dotenv -e .env.test npx jest --passWithNoTests --runInBand",
+    "test:migration": "npx dotenv -e .env.test npx prisma migrate dev --name afesta_test -init",
     "test:seed": "dotenv -e .env.test -- ts-node prisma/seed.ts"
   },
   "prisma": {
