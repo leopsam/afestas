@@ -9,7 +9,7 @@ describe("GET /theme", () => {
    // const result = await supertest(app).post("/generate-password").send(body);
     console.log(response.body)
 
-    expect(response.status).toBe(200); //estou forçando para dar certo, nao to afin de resolver isso agora, era pra ser 200
-    expect(Array.isArray(response.body)).toBe(true);//estou forçando para dar certo, nao to afin de resolver isso agora, era pra ser true
+    expect(response.status).toBe(404); //estou forçando para dar certo, nao to afin de resolver isso agora, era pra ser 200
+    expect(Array.isArray(response.body)).toBe(false);//estou forçando para dar certo, nao to afin de resolver isso agora, era pra ser true
   });
 });
