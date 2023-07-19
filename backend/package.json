@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "npm run dev:migration && node dist/src/server.js",
+    "start": "npm run dev:migration & npm run dev:seed & node dist/src/server.js",
     "prisma:migrate:deploy": "prisma migrate deploy",
 
     "dev": "nodemon -r tsconfig-paths/register ./src/server.ts",
