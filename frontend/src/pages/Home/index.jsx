@@ -208,62 +208,9 @@ export default function Home() {
           </ServiceTypes>
         </Service>
 
-        <Testimonial>
-          <img src={depositions[0].photo} />
-          <div>
-            <p>&ldquo;{depositions[0].depositions}&rdquo;</p>
-            <h3>{depositions[0].name}</h3>
-          </div>
-        </Testimonial>
+       
 
-        <Carrosel>
-          <TitleService>
-            <h1>Galeria A Festas</h1>
-            <p>
-              Aqui você encontrará um verdadeiro tesouro visual de festas
-              encantadoras e decorações deslumbrantes criadas pela A Festa
-              Ornamentações. Explore nossa coleção de imagens e deixe-se
-              envolver pela magia e criatividade que trazemos para cada
-              celebração. De aniversários a casamentos, eventos corporativos a
-              festas temáticas, cada foto conta uma história única de momentos
-              especiais e memórias felizes. Deixe-se inspirar por nossa paixão
-              pela arte de ornamentar festas e descubra como podemos transformar
-              sua próxima comemoração em algo verdadeiramente extraordinário.
-            </p>
-            <button
-              onClick={() => {
-                navigate("/gallery");
-                window.scrollTo(0, 0);
-              }}
-            >
-              IR PARA GALERIA
-            </button>
-          </TitleService>
-          <CarouselContainer>
-            {slides.map((slide, index) => (
-              <Slide
-                key={index}
-                style={{
-                  transform: `translateX(-${currentSlideLeft * 200}px)`,
-                }}
-              >
-                <SlideImage src={slide.photo} alt={`Slide ${index + 1}`} />
-              </Slide>
-            ))}
-          </CarouselContainer>
-          <CarouselContainer>
-            {slides.map((slide, index) => (
-              <Slide
-                key={index}
-                style={{
-                  transform: `translateX(-${currentSlideRight * 200}px)`,
-                }}
-              >
-                <SlideImage src={slide.photo} alt={`Slide ${index + 1}`} />
-              </Slide>
-            ))}
-          </CarouselContainer>
-        </Carrosel>
+       
 
         <Testimonial>
           {!depositions[1] ? (
@@ -274,6 +221,14 @@ export default function Home() {
               </div>
             </>
           ) : (
+            !depositions ? (
+            <>
+             <div>
+                <p>&ldquo;Vazio 404&rdquo;</p>
+                <h3>Vazio 404</h3>
+              </div>
+            </>
+            ):(
             <>
               <div>
                 <p>&ldquo;{depositions[1].depositions}&rdquo;</p>
@@ -281,7 +236,7 @@ export default function Home() {
               </div>
               <img src={depositions[1].photo} />
             </>
-          )}
+          ))}
         </Testimonial>
       </ContainerBody>
       <Footer />
