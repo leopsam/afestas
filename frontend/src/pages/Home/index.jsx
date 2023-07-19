@@ -274,6 +274,14 @@ export default function Home() {
               </div>
             </>
           ) : (
+            !depositions ? (
+            <>
+             <div>
+                <p>&ldquo;Vazio 404&rdquo;</p>
+                <h3>Vazio 404</h3>
+              </div>
+            </>
+            ):(
             <>
               <div>
                 <p>&ldquo;{depositions[1].depositions}&rdquo;</p>
@@ -281,7 +289,7 @@ export default function Home() {
               </div>
               <img src={depositions[1].photo} />
             </>
-          )}
+          ))}
         </Testimonial>
       </ContainerBody>
       <Footer />
