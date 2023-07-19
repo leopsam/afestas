@@ -64,7 +64,7 @@ export default function Home() {
         <div>
           <Banner src={banner} alt="Banner" />
           <Container>
-            <p>teste CD/CI 16</p>
+            <p>BEM VINDO AO APARECIDA FESTAS</p>
             <h1>
               Transformando momentos em memórias inesquecíveis, A Festas, onde
               cada celebração ganha vida!
