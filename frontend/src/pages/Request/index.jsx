@@ -52,7 +52,7 @@ export default function Requests() {
             <Header/>          
             <Banner src={banner} alt="Banner"/>
 
-            {user ?
+            {!user ?
                 <>
                     <DescriptionService>
                         <h2>BEM VIDO À PAGINA DE PEDIDOS</h2>
