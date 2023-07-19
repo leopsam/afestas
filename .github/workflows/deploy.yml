@@ -7,8 +7,7 @@ jobs:
   build:
     runs-on: self-hosted
     timeout-minutes: 10
-    steps:
-      
+    steps:      
       - name: Checkout
         uses: actions/checkout@v3
 

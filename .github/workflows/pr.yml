@@ -10,12 +10,10 @@ jobs:
         uses: SpicyPizza/create-envfile@v1.3
         with:
           envkey_PORT: 4000 
-          envkey_POSTGRES_USERNAME: "postgres"
+          envkey_POSTGRES_USER: "postgres"
           envkey_POSTGRES_PASSWORD: "postgres"
-          envkey_POSTGRES_HOST: "postgres"
-          envkey_POSTGRES_PORT: 5432
-          envkey_POSTGRES_DATABASE: "afesta_test"
-          envkey_DATABASE_URL: "postgresql://${POSTGRES_USERNAME}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DATABASE}?schema=public"
+          envkey_POSTGRES_DB: "afesta"
+          envkey_DATABASE_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}"
           directory: backend
           file_name: .env.test
           fail_on_empty: true

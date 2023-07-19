@@ -1,27 +1,15 @@
-import app, { init, close } from "./../../src/app";
+import app from "../../src/app";
 import supertest from "supertest";
 
-beforeAll(async () => {
-  await init();
-});
-
-const api = supertest(app);
+//const api = supertest(app);
 
 describe("GET /theme", () => {
   it("should get all theme", async () => {
-    const response = await api.get("/theme/all");
+    const response = await supertest(app).get("/theme/all");
+   // const result = await supertest(app).post("/generate-password").send(body);
+    console.log(response.body)
 
-    expect(response.status).toBe(404); //estou forçando para dar certo, nao to afin de resolver isso agora, era pra ser 200
-    expect(Array.isArray(response.body)).toBe(false);//estou forçando para dar certo, nao to afin de resolver isso agora, era pra ser true
-   /* expect(response.body).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          id: expect.any(Number),
-          title: expect.any(String),
-          category: expect.any(String),
-          photo: expect.any(String),
-        }),
-      ])
-    );*/
+    expect(response.status).toBe(200); //estou forçando para dar certo, nao to afin de resolver isso agora, era pra ser 200
+    expect(Array.isArray(response.body)).toBe(true);//estou forçando para dar certo, nao to afin de resolver isso agora, era pra ser true
   });
 });
